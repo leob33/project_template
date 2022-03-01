@@ -1,8 +1,15 @@
 # PyCharm
 .idea/
 
+# Project
+tmp/
+
+#other
+*/.DS_Store
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
-__pycache__/
+*/__pycache__/
 *.py[cod]
 *$py.class
 
