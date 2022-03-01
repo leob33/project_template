@@ -1,0 +1,14 @@
+FROM python:3.10.2-slim AS builder
+RUN apt-get update && apt-get clean && rm -rf /var/lib/apt/lists/*
+COPY project_name /app/project_name
+COPY setup.cfg setup.py /app/
+WORKDIR /app
+RUN pip install wheel build && python -m build --wheel
+
+
+FROM python:3.10.2-slim
+COPY --from=builder /app/dist /app/dist
+WORKDIR app
+RUN pip install --user -U pip && pip install dist/project_name-1.0-py3-none-any.whl
+EXPOSE 8080
+ENTRYPOINT hello-template
