@@ -11,7 +11,7 @@ instructions/*
 /.coverage
 /build/
 /dist/
-/gilded_rose.egg-info/
+/project_name.egg-info/
 /reports/
 
 requirements/all.

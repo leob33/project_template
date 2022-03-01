@@ -41,16 +41,6 @@ build-wheel:
 install-wheel:
 	pip install dist/$(SRC_FOLDER)-1.0.0-py3-none-any.whl
 
-# ++++++++ INSTALL FROM PYPI ++++++++++
-
-TOKEN_NAME = dojo_3
-TOKEN_VALUE = glpat-XVvaKKwnJzXmo_oy1dS9
-PROJECT_ID = 33311720
-
-install-from-pypi:
-	pip install --index-url https://$(TOKEN_NAME):$(TOKEN_VALUE)@gitlab.com/api/v4/projects/$(PROJECT_ID)/packages/pypi/simple --no-deps $(SRC_FOLDER)
-
-
 # ================= OTHER USEFUL COMMAND =================
 
 install-package-normal:
